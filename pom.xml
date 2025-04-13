@@ -18,11 +18,11 @@
     </parent>
 
     <dependencies>
-        <!-- Spring Boot Web Starter -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		    <version>3.0.0</version>
+		  </dependency>
 
         <!-- Thymeleaf 템플릿 엔진 (웹 페이지 렌더링) -->
         <dependency>
@@ -39,18 +39,22 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <!-- Spring Boot Maven Plugin -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+	  <plugins>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <version>3.10.1</version> <!-- 최신 버전으로 설정 -->
+	      <configuration>
+	        <source>24</source>
+	        <target>24</target>
+	      </configuration>
+	    </plugin>
+	  </plugins>
+	</build>
 
     <!-- 설정을 통해 Maven에서 사용할 JDK 버전 지정 -->
     <properties>
-        <java.version>11</java.version> <!-- 사용할 JDK 버전 -->
+        <java.version>24</java.version> <!-- 사용할 JDK 버전 -->
     </properties>
 
 </project>
