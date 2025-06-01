@@ -2,18 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>thymeleaf alert</title>
+    <title>alert</title>
 </head>
 
-<script th:inline="javascript">
-    /*<![CDATA[*/
-
-    var message = /*[[${message} != null ? ${message} : '기본 메시지']]*/ '기본 메시지';
-    alert(message);  // 알림창 띄우기
-
-    // URL 값
-    location.replace([[${searchUrl}]]);
+<body>
+  <div id="message" th:text="${message}" style="display:none;"></div>
+  
+  <script>
+    var message = document.getElementById('message').textContent || '기본 메시지';
+    alert(message);
     
-    /*]]>*/
-</script>
+    var url = /*[[${searchUrl}]]*/ '/home';
+    location.replace(url);
+  </script>
+</body>
 </html>

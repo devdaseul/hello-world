@@ -2,9 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>회원가입 페이지</title>
 </head>
 <body>
-    <h1>홈페이지</h1>
+    <h1>회원가입</h1>
+    <form action="#" th:action="@{/register}" th:object="${account}" method="post">
+        <label>아이디:</label>
+        <input type="text" th:field="*{id}" /><br/>
+        
+        <label>이름:</label>
+        <input type="text" th:field="*{name}" /><br/>
+        
+        <label>비밀번호:</label>
+        <input type="password" th:field="*{password}" /><br/>
+        
+        <button type="submit">가입하기</button>
+    </form>
 </body>
 </html>

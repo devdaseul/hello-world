@@ -3,28 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.lily</groupId>
-    <artifactId>helloworld</artifactId>
+    <artifactId>project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>helloworld</name>
-    <description>Spring Boot Hello World Example</description>
+    <name>project</name>
+    <description>Spring Boot Project</description>
 
     <!-- 부모 Spring Boot 의존성 관리 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.5</version> <!-- 원하는 버전으로 설정 -->
+        <version>3.2.5</version>
     </parent>
 
     <dependencies>
         <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-web</artifactId>
-		    <version>3.0.0</version>
-		  </dependency>
+		    <version>3.2.5</version>
+		</dependency>
 
-        <!-- Thymeleaf 템플릿 엔진 (웹 페이지 렌더링) -->
+        <!-- Thymeleaf 템플릿 엔진 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -36,6 +35,26 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        
+	    <!-- Spring Data JPA -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    </dependency>
+	    
+		<!-- PostgreSQL JDBC Driver -->
+	    <dependency>
+	        <groupId>org.postgresql</groupId>
+	        <artifactId>postgresql</artifactId>
+	        <version>42.7.3</version> <!-- 최신 안정 버전 -->
+	    </dependency>
+	    
+	    <dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.32</version>
+		    <scope>provided</scope>
+		</dependency>
     </dependencies>
 
     <build>
@@ -45,8 +64,8 @@
 	      <artifactId>maven-compiler-plugin</artifactId>
 	      <version>3.10.1</version> <!-- 최신 버전으로 설정 -->
 	      <configuration>
-	        <source>24</source>
-	        <target>24</target>
+	        <source>21</source>
+	        <target>21</target>
 	      </configuration>
 	    </plugin>
 	  </plugins>
@@ -54,7 +73,7 @@
 
     <!-- 설정을 통해 Maven에서 사용할 JDK 버전 지정 -->
     <properties>
-        <java.version>24</java.version> <!-- 사용할 JDK 버전 -->
+        <java.version>21</java.version> <!-- 사용할 JDK 버전 -->
     </properties>
 
 </project>
