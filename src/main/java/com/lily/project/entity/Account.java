@@ -18,7 +18,7 @@ public class Account {
     @Column(name = "account_seq")
     private Long accountSeq;
 
-    private String id;
+    private String accountId;
     private String name;
     private String password;
 }

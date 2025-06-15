@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>alert</title>
+    <title>알림창</title>
 </head>
-
 <body>
-  <div id="message" th:text="${message}" style="display:none;"></div>
-  
-  <script>
-    var message = document.getElementById('message').textContent || '기본 메시지';
-    alert(message);
-    
-    var url = /*[[${searchUrl}]]*/ '/home';
-    location.replace(url);
-  </script>
+<h2 th:text="${message}">메시지</h2>
+<p><a th:href="${searchUrl}">주소</a></p>
 </body>
 </html>
